@@ -21,3 +21,9 @@ Run the application:
 ```console
 $ npm start
 ```
+
+## Another option for playing without installing any software
+
+Create an account at [CodeSandbox](https://codesandbox.io) (you can just use your GitHub account to create the account)
+
+Then visit [https://codesandbox.io/s/github/TEST-BentoBox/ui-playground](https://codesandbox.io/s/github/TEST-BentoBox/ui-playground) which allows you to fork the project and run within your browser while also editing the code.
