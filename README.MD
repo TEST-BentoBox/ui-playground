@@ -26,4 +26,4 @@ $ npm start
 
 Create an account at [CodeSandbox](https://codesandbox.io) (you can just use your GitHub account to create the account)
 
-Then visit [https://codesandbox.io/s/github/TEST-BentoBox/ui-playground](https://codesandbox.io/s/github/TEST-BentoBox/ui-playground) which allows you to fork the project and run within your browser while also editing the code.
+Then visit [https://codesandbox.io/s/github/uw-it-sis/ui-playground](https://codesandbox.io/s/github/uw-it-sis/ui-playground) which allows you to fork the project and run within your browser while also editing the code.
