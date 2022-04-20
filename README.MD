@@ -4,7 +4,7 @@ Install [Node.js](https://nodejs.org/en/download/) on your system if you haven't
 
 Get the project code:
 ```console
-$ git clone https://github.com/TEST-BentoBox/ui-playground.git
+$ git clone git@github.com:uw-it-sis/ui-playground.git
 ```
 
 Navigate to the project directory:

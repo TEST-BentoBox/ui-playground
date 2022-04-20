@@ -30,30 +30,40 @@ class Contacts extends Component {
      */
     fetchContacts = async () => {
         this.setState({
-            status: "pending"
+            status: "pending",
+            error: ""
         });
 
         const url = "https://jsonblob.com/api/jsonBlob/c0c89591-1c4a-11ea-a001-5185b10b35d6";
 
         try {
-            fetch(url, {
+            let data;
+            let response = await fetch(url, {
                 method: 'GET',
                 mode: 'cors',
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
                 }
-            }).then(response => {
-                return response.json();
-            }).then(data => {
+            });
+
+            const isJson = response.headers.get('content-type')?.includes('application/json');
+            data = isJson ? await response.json() : null;
+
+            // check for error response
+            if (!response.ok) {
+                throw `${response.status}${response.statusText ? ` - ${response.statusText}` : ''}`;
+            } else {
                 this.setState({
                     data: data,
                     status: "done"
                 });
-            });
+            }
         } catch (error) {
             this.setState({
-                status: "error"
+                data: undefined,
+                status: "error",
+                error: error
             });
         }
     };
@@ -105,7 +115,9 @@ class Contacts extends Component {
             case "error":
                 component =
                     <Alert variant="danger">
-                        Error getting the data!
+                        <h4 className="alert-heading">Error getting the data!</h4>
+                        <hr />
+                        <p className="mb-0">{this.state.error}</p>
                     </Alert>;
                 break;
             // the fetch is completed, display data/messaging/form based on the data source

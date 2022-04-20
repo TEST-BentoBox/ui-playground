@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from "react-dom";
-import {HashRouter, Redirect, Route, Switch} from 'react-router-dom';
+import {HashRouter, Navigate, Route, Routes} from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker';
 
 import './scss/main.scss'
@@ -15,10 +15,10 @@ import Contacts from './components/contacts';
  * Define the routes (pages).
  */
 const routes =
-    <Switch>
-        <Route path="/contacts" exact component={Contacts} />
-        <Redirect from="/" to="/contacts" />
-    </Switch>;
+    <Routes>
+        <Route path="/contacts" exact element={<Contacts/>} />
+        <Route path="/" element={<Navigate replace to="/contacts" />} />
+    </Routes>;
 
 const router = (
     <HashRouter>
