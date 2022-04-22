@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {LinkContainer} from 'react-router-bootstrap'
 
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
@@ -17,11 +18,11 @@ class App extends Component {
             <>
                 <header>
                     <Navbar bg="primary" variant="dark" expand="lg" fixed>
-                        <Navbar.Brand href="#home">Title</Navbar.Brand>
+                        <LinkContainer to="/"><Navbar.Brand>Title</Navbar.Brand></LinkContainer>
                         <Navbar.Toggle aria-controls="global-nav" />
                         <Navbar.Collapse id="global-nav">
                             <Nav className="mr-auto">
-                                <Nav.Link href="#home">Contacts</Nav.Link>
+                                <LinkContainer to="/contacts"><Nav.Link>Contacts</Nav.Link></LinkContainer>
                             </Nav>
                         </Navbar.Collapse>
                     </Navbar>

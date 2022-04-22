@@ -1,9 +1,9 @@
 import React from 'react';
 import {render} from "react-dom";
-import {HashRouter, Navigate, Route, Routes} from 'react-router-dom';
+import {BrowserRouter, Navigate, Route, Routes} from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker';
 
-import './scss/main.scss'
+import './scss/index.css'
 
 // boilerplate template of the app
 import App from './App';
@@ -21,9 +21,9 @@ const routes =
     </Routes>;
 
 const router = (
-    <HashRouter>
+    <BrowserRouter>
         <App routes={routes} />
-    </HashRouter>
+    </BrowserRouter>
 );
 
 render(router, document.getElementById('root'));
